@@ -1,7 +1,22 @@
 heroku
 ======
+
+
+1)
+:Adams@ADAMS-PC /c/hellodjango/venv/scripts/hellodjango (master)
+:git init
+Reinitialized existing Git repository in c:/hellodjango/venv/scripts/hellodjango
+/.git/
+
+2)
+Adams@ADAMS-PC /c/hellodjango/venv/scripts/hellodjango (master)
+$ git remote add origin https://github.com/akipkemei/heroku.git
+
+3)
+
 Adams@ADAMS-PC /c/hellodjango/venv/scripts/hellodjango (master)
 :git push -u origin master
+
 Username for 'https://github.com': akipkemei@gmail.com
 :
 Counting objects: 25, done.
