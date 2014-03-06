@@ -56,17 +56,28 @@ WSGI_APPLICATION = 'hellodjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+##DATABASES = {
+##    'default': {
+##
+##        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+##        'NAME': 'postgres',                      # Or path to database file if using sqlite3.
+##        'USER': 'postgres',                      # Not used with sqlite3.
+##        'PASSWORD': 'ibanana',                  # Not used with sqlite3.
+##        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+##        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+##    }
+##}
 DATABASES = {
-    'default': {
-
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'postgres',                      # Or path to database file if using sqlite3.
-        'USER': 'postgres',                      # Not used with sqlite3.
-        'PASSWORD': 'ibanana',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'd2kq5ve30vlmm8',
+    'HOST': 'ec2-54-197-241-79.compute-1.amazonaws.com',
+    'PORT': 5432,
+    'USER': 'mscxygirncclpr',
+    'PASSWORD': 'qrYgG0PRpRDKDMoZ5tnCqOOrMZ',
+  }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -83,14 +94,22 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
+# https://docs.djangoproject.com/en/1.6/howto/static-files/	e
 
 STATIC_URL = '/static/'
 
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+
+DATABASES['default'] =  dj_database_url.config(default ='postgres://mscxygirncclpr:qrYgG0PRpRDKDMoZ5tnCqOOrMZ@ec2-54-197-241-79.compute-1.amazonaws.com:5432/d2kq5ve30vlmm8')
+#------
+
+
+#DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
+#------
+#DATABASES['default'] =  dj_database_url.config(default ='postgres://localhost')
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
