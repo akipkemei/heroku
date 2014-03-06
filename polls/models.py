@@ -2,7 +2,6 @@ from django.db import models
 from datetime import datetime
 #from django.utils import timezone
 #from pytz import UTC
-#datetime.datetime.now()
 
 
 # Create your models here.
