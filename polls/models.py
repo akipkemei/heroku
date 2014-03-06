@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 #from django.utils import timezone
-#from pytz import UTC
+from pytz import UTC
 
 
 # Create your models here.
