@@ -7,7 +7,7 @@ from django.template import RequestContext, loader
 
 
 from polls.models import Poll
-from equality.models import MonthlyWeatherByCity
+#from equality.models import MonthlyWeatherByCity
 
 import os.path
 from Cheetah.Template import Template
