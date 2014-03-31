@@ -1,0 +1,34 @@
+<html>
+    <head><title>I can has cheetah templates!</title></head>
+    <body>
+	
+	
+	
+	<h1 align="center"> $latest_poll_list1[3].boston_temp <i>Weather</i>  </h1>
+    #for $post in $latest_poll_list1
+    <table border = "1" cellspacing = "5">
+	<tr> <td>$post.id</td> <td>$post.month</td><td>$post.boston_temp</td> </tr>   
+    </table>
+    #end for
+	
+	<h1 align="center">  <b>Pollster</b></h1>
+    #for $post in $latest_poll_list
+    <table border = "1" cellspacing = "5">
+	<tr> <td>$post.id</td> <td>$post.question</td><td>$post.pub_date</td> </tr>
+    </table>
+	
+    #end for
+<h1 align="center">  <b> Interpolated Pollster</b></h1>
+    #for $post in $latest_poll_list3
+    <table border = "1" cellspacing = "5">
+	<tr> <td>$post.id</td> <td>$post.question</td> </tr>
+    </table>
+    #end for
+	
+	
+	
+	
+    </body>
+</html>
+
+
