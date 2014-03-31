@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'chartit',
     'equality',
-    'Cheetah,
+    
     'polls',
 )
 
