@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        {% load static %}
+        <script src="/static/js/jquery/jquery-1.11.0.js" type="text/javascript"></script>
+        <script src="/static/js/highcharts/js/highcharts.js" type="text/javascript"></script>
+        {% load chartit %}
+        {{ weatherchart|load_charts:"cht" }}
+    </head>
+    <body>
+        <div id="cht"></div>
+    </body>
+</html>
+
+
+<html>
+    <head><title>I can has cheetah templates!</title></head>
+    <body>
+	
+	
+	
+	<h1 align="center"> $cht <i>Weather</i>  </h1>
+   
+	
+	
+	
+	
+	
+    </body>
+</html>

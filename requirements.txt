@@ -1,4 +1,6 @@
+Cheetah==2.4.4
 Django==1.6.2
+Markdown==2.4
 South==0.8.4
 dj-database-url==0.2.2
 dj-static==0.0.5
@@ -8,5 +10,6 @@ gunicorn==18.0
 psycopg2==2.5.2
 pystache==0.5.3
 pytz==2013.9
+simplejson==3.3.3
 static==1.0.2
 wsgiref==0.1.2

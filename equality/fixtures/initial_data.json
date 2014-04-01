@@ -1,0 +1,99 @@
+[ { "fields" : { "boston_temp" : "29.30",
+        "houston_temp" : "51.79",
+        "month" : 1
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 1
+  },
+  { "fields" : { "boston_temp" : "31.50",
+        "houston_temp" : "55.40",
+        "month" : 2
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 2
+  },
+  { "fields" : { "boston_temp" : "38.90",
+        "houston_temp" : "62.30",
+        "month" : 3
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 3
+  },
+  { "fields" : { "boston_temp" : "48.30",
+        "houston_temp" : "68.50",
+        "month" : 4
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 4
+  },
+  { "fields" : { "boston_temp" : "58.50",
+        "houston_temp" : "75.80",
+        "month" : 5
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 5
+  },
+  { "fields" : { "boston_temp" : "68.00",
+        "houston_temp" : "81.30",
+        "month" : 6
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 6
+  },
+  { "fields" : { "boston_temp" : "73.90",
+        "houston_temp" : "83.60",
+        "month" : 7
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 7
+  },
+  { "fields" : { "boston_temp" : "72.30",
+        "houston_temp" : "83.30",
+        "month" : 8
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 8
+  },
+  { "fields" : { "boston_temp" : "64.70",
+        "houston_temp" : "78.90",
+        "month" : 9
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 9
+  },
+  { "fields" : { "boston_temp" : "54.10",
+        "houston_temp" : "70.40",
+        "month" : 10
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 10
+  },
+  { "fields" : { "boston_temp" : "44.90",
+        "houston_temp" : "60.90",
+        "month" : 11
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 11
+  },
+  { "fields" : { "boston_temp" : "34.80",
+        "houston_temp" : "53.70",
+        "month" : 12
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 12
+  },
+
+
+
+{ "fields" : { "boston_temp" : "44.80",
+        "houston_temp" : "44.70",
+        "month" : 4
+      },
+    "model" : "equality.monthlyweatherbycity",
+    "pk" : 15
+  }
+
+
+
+
+]
