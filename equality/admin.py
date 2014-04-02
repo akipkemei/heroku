@@ -7,6 +7,11 @@ from equality.models import MonthlyWeatherByCity
 
 admin.site.register(MonthlyWeatherByCity)
 
+
+
+
+
+
 ##
 ##class CourseAdmin(admin.ModelAdmin):
 ##    list_display = ( 'course_id', 'title', 'catalog_number', )
