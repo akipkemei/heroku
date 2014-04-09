@@ -4,13 +4,10 @@ from django.contrib import admin
 
 from django.contrib import admin
 from equality.models import MonthlyWeatherByCity
+from equality.models import DailyWeather
 
 admin.site.register(MonthlyWeatherByCity)
-
-
-
-
-
+admin.site.register(DailyWeather)
 
 ##
 ##class CourseAdmin(admin.ModelAdmin):

@@ -5,7 +5,8 @@ from equality import views
 
 urlpatterns = patterns('',
     # ex: /equality/
-    url(r'^$', views.weather_chart_view, name='weather_chart_view'),
+    #url(r'^$', views.weather_chart_view, name='weather_chart_view'),
+    url(r'^$', views.rainfall_pivot_chart_view, name='rainfall_pivot_chart_view'),
 )
 
 

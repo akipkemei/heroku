@@ -1,17 +1,35 @@
-
-
 <head>
-     {%  load staticfiles %}
 	
 	<script type="text/javascript" src="/static/js/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="/static/js/highcharts.js"></script>
+    <!-- the charts need to be rendered to                             --> 	
 	
-	
-	
-    <!-- the charts need to be rendered to                             -->
-    {% load chartit %}
-    {{ weatherchart|load_charts:"container" }}
-</head>
+	</head>
 <body>
-    <div id='container'> Chart will be rendered here </div>
+   
+
+{% load chartit %}
+{{ rainpivchart|load_charts:"cht,cht1,vcht,pcht,mcht,ycht"}}
+
+<div id="cht" style=";height:200px;width:400px;float:right;">
+Content goes here</div>
+
+<div id="cht1" style=";height:200px;width:400px;float:left;">
+Content goes here</div>
+
+<div id="vcht" style=";height:200px;width:400px;margin:0 auto;">
+Content goes here</div>
+
+<div id="pcht" style=";height:300px;width:400px;float:right;">
+Content goes here</div>
+
+<div id="mcht" style=";height:300px;width:900px;float:left;">
+Content goes here</div>
+
+<div id="ycht" style=";height:300px;width:900px;float:left;">
+Content goes here</div>
+
+	
 </body>
+
+
