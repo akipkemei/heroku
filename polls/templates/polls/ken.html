@@ -1,9 +1,18 @@
 
 <p style="color:blue;margin-left:20px;">Geolocation Report from MOBILE FIELD VISIT</p>
 {% if ken_list %}
- <table style="width:800px"; BORDER=10 BORDERCOLOR=OLIVE>
+ <table style="width:1200px"; BORDER=10 BORDERCOLOR=OLIVE>
+  <tr>
+    <th>User</th>
+    <th>Message</th>
+    <th>Longitude</th>
+	<th>Latitude</th>
+    <th>Time</th>
+	<th>Accuracy</th>
+    
+  </tr>
     {% for poll in ken_list %}
-        <tr> <td>{{ poll.content }}</td><td>{{ poll.Longitude }}</td><td>{{ poll.Latitude }}</td></tr>
+    <tr> <td>{{ poll.user }}</td><td>{{ poll.content }}</td><td>{{ poll.Longitude }}</td><td>{{ poll.Latitude }}</td> <td>{{ poll.Accuracy}}</td> <td>{{poll.time }}</td>
     {% endfor %}
   </table>
 {% else %}
