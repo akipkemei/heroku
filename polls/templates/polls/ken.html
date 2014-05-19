@@ -1,0 +1,15 @@
+
+<p style="color:blue;margin-left:20px;">Geolocation Report from MOBILE FIELD VISIT</p>
+{% if ken_list %}
+ <table style="width:800px"; BORDER=10 BORDERCOLOR=OLIVE>
+    {% for poll in ken_list %}
+        <tr> <td>{{ poll.content }}</td><td>{{ poll.Longitude }}</td><td>{{ poll.Latitude }}</td></tr>
+    {% endfor %}
+  </table>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
+<p style="color:blue;margin-left:20px;">twitter: @arapmenet</p>
+
