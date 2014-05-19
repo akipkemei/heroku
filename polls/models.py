@@ -19,3 +19,22 @@ class Choice(models.Model):
 
     def __unicode__(self):  # Python 3: def __str__(self):
         return self.choice_text
+##########################################################################
+class User (models.Model):
+    name = models.CharField(max_length=20)
+
+    def __unicode__(self):              
+        return self.name
+
+class Message (models.Model):
+    content = models.TextField(max_length=140, null=True, blank=True)
+    user = models.ForeignKey(User)
+    time = models.DateTimeField(auto_now_add=True, blank=True)
+    Longitude = models.FloatField(max_length=255,default=0)
+    Latitude = models.FloatField(max_length=255,default=0)
+    Accuracy = models.FloatField(max_length=255,default=0)
+
+    def __unicode__(self):              
+        return self.content
+
+##########################################################################

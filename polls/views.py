@@ -134,3 +134,30 @@ def results(request, poll_id):
 
 def vote(request, poll_id):
     return HttpResponse("You're voting on poll %s." % poll_id)
+##########################################################################
+def indexx (request):
+    if request.method == 'POST':
+        u = User(name=request.POST.get('user'))
+        u.save()
+        m = Message(content=request.POST.get('text'),user = u,Latitude = request.POST.get('lati', ' '),
+                    Longitude =request.POST.get('longi', ' '), Accuracy =request.POST.get('accu', ' '))
+        m.save()
+       
+        #m = Message(content=request.POST.get('text', ' '), user = u)
+       
+        return render_to_response('polls/indexx.html', {
+                'user': u,
+                'message': m,
+               
+                }, RequestContext(request))
+    else:
+        u = User()
+        m = Message()
+        
+        return render_to_response('polls/indexx.html', {'user': u,'message': m}, RequestContext(request))
+
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################

@@ -5,6 +5,8 @@ from polls import views
 urlpatterns = patterns('',
     # ex: /polls/
     url(r'^$', views.index, name='index'),
+
+    url(r'^geo$','polls.views.indexx', name='indexx'),
               
     # ex: /polls/5/
     url(r'^(?P<poll_id>\d+)/$', views.detail, name='detail'),
