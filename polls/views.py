@@ -6,8 +6,12 @@ from django.template import RequestContext, loader
 
 
 
+from django.shortcuts import get_object_or_404, render_to_response
 
-from polls.models import Poll
+
+#from polls.models import Poll, User, Message
+
+from polls.models import *
 #from equality.models import MonthlyWeatherByCity
 
 ######import os.path
