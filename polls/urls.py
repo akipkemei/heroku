@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^$', views.home, name='home'),
     url(r'^geo$','polls.views.indexx', name='indexx'),
     url(r'^kenn$','polls.views.kenn', name='kenn'),
+    url(r'^error$','polls.views.error', name='error'),
    #####################################################                    
     
               
