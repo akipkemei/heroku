@@ -178,7 +178,7 @@ def error( request ):
 def indexx (request):
     if request.method == 'POST':
 
-        if request.POST.get('lati') == ' ':
+        if request.POST.get('lati') != ' ':
             u = User(name=request.POST.get('user'))
             u.save()
          
