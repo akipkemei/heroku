@@ -55,7 +55,7 @@ MIDDLEWARE_CLASSES = (
 
     
 
-    'mobi.middleware.MobileDetectionMiddleware',
+    #'mobi.middleware.MobileDetectionMiddleware',
 )
 
 
