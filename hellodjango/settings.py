@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'chartit',
     'equality',
-    'django_user_agents',
+   
     'polls',
 )
 
@@ -55,7 +55,7 @@ MIDDLEWARE_CLASSES = (
 
     
 
-    'mobi.MobileDetectionMiddleware',
+    'mobi.middleware.MobileDetectionMiddleware',
 )
 
 
