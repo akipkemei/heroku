@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'chartit',
     'equality',
-    
+    'django_user_agents',
     'polls',
 )
 
@@ -47,9 +47,18 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    
+   
+    
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    
+
+    'mobi.MobileDetectionMiddleware',
 )
+
+
 
 ROOT_URLCONF = 'hellodjango.urls'
 
