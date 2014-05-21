@@ -139,27 +139,27 @@ def results(request, poll_id):
 def vote(request, poll_id):
     return HttpResponse("You're voting on poll %s." % poll_id)
 ##########################################################################
-######def indexx (request):
-######    if request.method == 'POST':
-######        u = User(name=request.POST.get('user'))
-######        u.save()
-######        m = Message(content=request.POST.get('text'),user = u,Latitude = request.POST.get('lati', ' '),
-######                    Longitude =request.POST.get('longi', ' '), Accuracy =request.POST.get('accu', ' '))
-######        m.save()
-######       
-######        #m = Message(content=request.POST.get('text', ' '), user = u)
-######       
-######        return render_to_response('polls/indexx.html', {
-######                'user': u,
-######                'message': m,
-######               
-######                }, RequestContext(request))
-######    else:
-######        u = User()
-######        m = Message()
-######        
-######        return render_to_response('polls/indexx.html', {'user': u,'message': m}, RequestContext(request))
-######
+def indexx (request):
+    if request.method == 'POST':
+        u = User(name=request.POST.get('user'))
+        u.save()
+        m = Message(content=request.POST.get('text'),user = u,Latitude = request.POST.get('lati', ' '),
+                    Longitude =request.POST.get('longi', ' '), Accuracy =request.POST.get('accu', ' '))
+        m.save()
+       
+        #m = Message(content=request.POST.get('text', ' '), user = u)
+       
+        return render_to_response('polls/indexx.html', {
+                'user': u,
+                'message': m,
+               
+                }, RequestContext(request))
+    else:
+        u = User()
+        m = Message()
+        
+        return render_to_response('polls/indexx.html', {'user': u,'message': m}, RequestContext(request))
+
 ##########################################################################
 ##########################################################################
 def kenn(request):
@@ -175,38 +175,38 @@ def home( request ):
 def error( request ):
    return render_to_response('polls/error.html')
 ##########################################################################
-def indexx (request):
-    if request.method == 'POST':
-
-        if request.POST.get('lati') != ' ':
-            u = User(name=request.POST.get('user'))
-            u.save()
-         
-
-##        if m.is_valid() and u.is_valid() is not True :
-##            
-##            raise forms.ValidationError("You have forgotten about Fred!")
+##def indexx (request):
+##    if request.method == 'POST':
+##
+##        if request.POST.get('lati') != ' ':
+##            u = User(name=request.POST.get('user'))
+##            u.save()
+##         
+##
+####        if m.is_valid() and u.is_valid() is not True :
+####            
+####            raise forms.ValidationError("You have forgotten about Fred!")
+####       
+####        #m = Message(content=request.POST.get('text', ' '), user = u)
+####        else:
+##            form = Message(content=request.POST.get('text'),user = u,Latitude = request.POST.get('lati', ),
+##                    Longitude =request.POST.get('longi', ), Accuracy =request.POST.get('accu', ))
 ##       
-##        #m = Message(content=request.POST.get('text', ' '), user = u)
+##            form.save()
+####        return render_to_response('polls/indexx.html', {
+####                'user': u,
+####                'message': form,
+####               
+####                }, RequestContext(request))
 ##        else:
-            form = Message(content=request.POST.get('text'),user = u,Latitude = request.POST.get('lati', ),
-                    Longitude =request.POST.get('longi', ), Accuracy =request.POST.get('accu', ))
-       
-            form.save()
-##        return render_to_response('polls/indexx.html', {
-##                'user': u,
-##                'message': form,
-##               
-##                }, RequestContext(request))
-        else:
-            return  HttpResponseRedirect ( '/polls/error' )
-    
-         
-##    else:
-##        u = User()
-##        form = Message()
-        
-    return render_to_response('polls/indexx.html', {'x':User(), 'y':Message()}, RequestContext(request))
+##            return  HttpResponseRedirect ( '/polls/error' )
+##    
+##         
+####    else:
+####        u = User()
+####        form = Message()
+##        
+##    return render_to_response('polls/indexx.html', {'x':User(), 'y':Message()}, RequestContext(request))
 ##########################################################################
 ##########################################################################
 ##########################################################################
