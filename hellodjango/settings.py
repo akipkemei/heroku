@@ -116,9 +116,11 @@ import dj_database_url
 
 DATABASES['default'] =  dj_database_url.config(default ='postgres://mscxygirncclpr:qrYgG0PRpRDKDMoZ5tnCqOOrMZ@ec2-54-197-241-79.compute-1.amazonaws.com:5432/d2kq5ve30vlmm8')
 #------
-
-
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()
 #DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 #------
 #DATABASES['default'] =  dj_database_url.config(default ='postgres://localhost')
