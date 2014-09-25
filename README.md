@@ -1,6 +1,11 @@
 heroku
 ======
-
++ cd /c/hellodjango/venv/scripts/hellodjango
++ git init
++ git add .
++ git commit -m "my django app"
++ git pull
++ git git push origin master
 
 1)
 :Adams@ADAMS-PC /c/hellodjango/venv/scripts/hellodjango (master)
