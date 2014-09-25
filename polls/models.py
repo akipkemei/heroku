@@ -38,13 +38,13 @@ class Message (models.Model):
         return self.content
 
 ##########################################################################
-
-from django.contrib.gis.db import models
-
-class Pointa(models.Model):
-    name = models.CharField(max_length=50)
-    coords = models.PointField()
-    objects = models.GeoManager()
+#from django.contrib.gis.db import models as geomodels
+##from django.contrib.gis.db import models
+##
+##class Pointa(models.Model):
+##    name = models.CharField(max_length=50)
+##    coords = models.PointField()
+##    objects = models.GeoManager()
     
 class Lalal (models.Model):
     content = models.TextField(max_length=140, null=True, blank=True)
