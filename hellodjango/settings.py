@@ -85,16 +85,16 @@ WSGI_APPLICATION = 'hellodjango.wsgi.application'
 ####        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
 ####    }
 ####}
-####DATABASES = {
-####  'default': {
-####    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-####    'NAME': 'd2kq5ve30vlmm8',
-####    'HOST': 'ec2-54-197-241-79.compute-1.amazonaws.com',
-####    'PORT': 5432,
-####    'USER': 'mscxygirncclpr',
-####    'PASSWORD': 'qrYgG0PRpRDKDMoZ5tnCqOOrMZ',
-####  }
-####}
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'd2kq5ve30vlmm8',
+    'HOST': 'ec2-54-197-241-79.compute-1.amazonaws.com',
+    'PORT': 5432,
+    'USER': 'mscxygirncclpr',
+    'PASSWORD': 'qrYgG0PRpRDKDMoZ5tnCqOOrMZ',
+  }
+}
 
 try:
     GEOS_LIBRARY_PATH = os.path.join(os.environ['GEOS_LIBRARY_PATH'], 'libgeos_c.so')
@@ -133,7 +133,7 @@ DATABASES['default'] =  dj_database_url.config(default ='postgres://mscxygirnccl
 ##DATABASES['default'] =  dj_database_url.config()
 ##DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
-#DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 #------
 #DATABASES['default'] =  dj_database_url.config(default ='postgres://localhost')
