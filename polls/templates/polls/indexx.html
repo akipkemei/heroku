@@ -6,7 +6,7 @@
 
 </head>
 
-<body onload="getLocation()">
+<body onload="getRandom()">
 
  <a href="http://maliyetu.herokuapp.com/polls/">Home</a>
  
@@ -27,30 +27,26 @@
 <!--Accuracy :-->  <input   type="hidden"   type="text" id="demo6" name="accu" />
     <input type="submit" value="Submit">
 </form>
-
-
 <script>
 var zd=document.getElementById("demo9");
 var zb=document.getElementById("demo5");
 var zc=document.getElementById("demo6");
 
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition);
-    }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
-  }
-function showPosition(position)
-  {
 
-zd.setAttribute("value", position.coords.longitude);
-zb.value= position.coords.latitude;	
-zc.value= position.coords.accuracy;
+function getRandom() {
 
- }
+
+  
+zd.value= Math.floor(Math.random() * (180 - (-180) + 1)) + -180;
+zb.value= Math.floor(Math.random() * (99 - (-90) + 1)) + -90;	
+zc.value= Math.floor(Math.random() * (1800 - (-7) + 1)) + -7;;
+}
+
+
+
 </script>
+
+
 
 
 </body>

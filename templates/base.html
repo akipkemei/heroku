@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="...">
+    <meta name="author" content="Ivan Pasic">
+
+    <title>Adam Menet Map Filter</title>
+
+    <!-- Jquery -->
+    <script src="{% static 'website/js/jquery-1.10.2.js' %}"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'website/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="{% static 'website/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Marmelad' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS -->
+    <link href="{% static 'website/css/stylesheet.css' %}" rel="stylesheet">
+
+    {% block extra_head %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}"><span class="nav-list"><strong>AdamMenet  Map Filter </strong></span></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-left navbar-ex1-collapse">
+                <ul class="nav navbar-nav">        
+                    <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> <span class="nav-list">Home</span></a></li>                        
+                    <li><a href="{% url 'info' %}"><i class="fa fa-info-circle"></i> <span class="nav-list">Info</span></a></li>               
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <div id="footer_info">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>Find Out More</h4>
+            <hr class="section-heading-spacer2">
+            <div class="clearfix"></div>
+            <a href="https://github.com/ipasic/geodjango-leaflet-map-filter" style="text-decoration:none; color:inherit;"><i class="fa fa-github-alt"></i> Github Repository</a>
+          </div>
+          <div class="col-lg-6">
+            <h4>Contact Info</h4>
+            <hr class="section-heading-spacer2">
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-lg-12">
+                <a href="mailto:ivanpasic.zd@gmail.com" style="text-decoration:none; color:inherit;"><i class="fa fa-envelope"></i> akipkemei@gmail.com</a><br>
+                <a href="twitter.com/ivan_pasic" style="text-decoration:none; color:inherit;"><i class="fa fa-twitter-square"></i> Twitter</a><br>
+                <a href="linkedin.com/in/ivanpasic" style="text-decoration:none; color:inherit;"><i class="fa fa-linkedin"></i> Linkedin</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p style="color: black;"><strong>&copy; 2014  - GeoDjango Map Filter Example</strong></p>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="{% static 'website/js/bootstrap.js' %}"></script>
+
+    {% block extra_body %}
+    {% endblock %}
+
+</body>
+
+</html>

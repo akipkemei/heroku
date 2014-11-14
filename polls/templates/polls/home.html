@@ -1,21 +1,80 @@
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html>
+{% load staticfiles %}
 
+{% block extra_head %}
+<!-- JQuery ui -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
-<head>
-<title>Mobile Sales Locator</title>
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+<![endif]-->
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
-</head>
+<!-- Full Screen Control -->
+<link rel="stylesheet" href="{% static 'website/css/leaflet_plugins/Control.FullScreen.css' %}" />
+<script type="text/javascript" src="{% static 'website/js/leaflet_map/leaflet_plugins/Control.FullScreen.js' %}"></script>
 
-<body>
- <a href="http://maliyetu.herokuapp.com/polls/">Home</a>
- 
-<h3> Welcome to the Sales Geolocator </h3>
-<p style="color:blue;margin-left:20px;" >a). Enter Sales Message : <a href="http://maliyetu.herokuapp.com/polls/geo">Data Entry</a></p>
-<p style="color:blue;margin-left:20px;" >b). View Field Data: <a href="http://maliyetu.herokuapp.com//polls/kenn">Datasets</a></p>
-<p style="color:blue;margin-left:20px;">c). Examples of Reports : <a href="http://maliyetu.herokuapp.com//equality">Charts Reports</a></p>
-<p style="color:blue;margin-left:20px;">d). Google Map Reports : <a href="https://www.google.com/maps/search/google/@20.0625,79.677068,4z/data=!3m1!4b1">Maps</a></p>
-</body>
-</html>
+<!-- Sidebar control -->
+<link rel="stylesheet" href="{% static 'website/css/leaflet_plugins/L.Control.Sidebar.css' %}" />
+<script type="text/javascript" src="{% static 'website/js/leaflet_map/leaflet_plugins/L.Control.Sidebar.js' %}"></script>
+{% endblock %}
+
+{% block content%}
+<div class="container mycontainer">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>Map Filter</h3>
+      <hr class="section-heading-spacer3">
+      <div class="clearfix"></div>
+      <p><i class="fa fa-plus-square-o"></i> <a href='#' id="filter_control" style="text-decoration:none; color:inherit;">Show Filter</a></p>
+      <div id="map" class="thumbnail"> </div>
+      <hr>
+    </div>
+  </div>
+</div>
+<!-- /.container -->
+
+<!-- Sidebar -->
+<div class="well" id="sidebar">
+  <h4>Map Filter</h4><hr>
+  <p><strong>City:</strong></p>
+  <select class="form-control" id="select_city" onchange="getResult()">
+      <option value="all">Show All</option>
+      <option disabled>---------------------------------------</option>         
+      <option value="New York City">New York City</option>
+      <option value="Syracuse">Syracuse</option>
+      <option value="Buffalo">Buffalo</option>
+      <option value="Rochester">Rochester</option>
+      <option value="Yonkers">Yonkers</option>
+  </select>      
+  <br>  
+  <p><strong>Price:</strong></p>
+  <p><span id="lbl" style="font-family:Marmelad;">0 $ - 3000 $</span></p>
+  <div id="slider_price" data-value="" style="width:100%; margin-left: 6px;"></div>      
+  <br>
+  <p><strong>WiFi:</strong></p>
+  <select class="form-control" id="select_wifi" onchange="getResult()">
+      <option value="all">Show All</option>
+      <option disabled>---------------------------------------</option>          
+      <option value="True">Yes</option>
+      <option value="0">No</option>
+  </select>   
+  <br>
+  <p><strong>Breakfast</strong></p>
+  <select class="form-control" id="select_breakfast" onchange="getResult()">
+      <option value="all">Show All</option>
+      <option disabled>---------------------------------------</option>          
+      <option value="True">Yes</option>
+      <option value="0">No</option>
+  </select>  
+</div>
+{% endblock %}
+
+{% block extra_body %}
+<script src="{% static 'website/js/leaflet_map/map.js' %}"></script>
+{% endblock %}

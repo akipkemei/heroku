@@ -1,4 +1,6 @@
-from django.conf.urls import patterns, url
+##from django.conf.urls import patterns, url
+
+from django.conf.urls import patterns, include, url
 
 from polls import views
 
@@ -6,18 +8,19 @@ urlpatterns = patterns('',
     # ex: /polls/
     #url(r'^$', views.index, name='index'),
     ####################################################
-    url(r'^$', views.home, name='home'),
+    #url(r'^home$', views.home1, name='home'),
+    url(r'^$', 'polls.views.home1', name='home'),
     url(r'^geo$','polls.views.indexx', name='indexx'),
     url(r'^kenn$','polls.views.kenn', name='kenn'),
     url(r'^error$','polls.views.error', name='error'),
-   #####################################################                    
+   #####################################################
+   
+    url(r'^render$', 'polls.views.home', name='home'),
+    url(r'^info/$', 'polls.views.info', name='info'),
+    url(r'^mapget/$', 'polls.views.get_apartments', name='get-apartment'),
+    url(r'^mapapart/$', 'polls.views.apartments_filter', name='apartments_filter'),
+
     
-              
-    # ex: /polls/5/
-    url(r'^(?P<poll_id>\d+)/$', views.detail, name='detail'),
-    # ex: /polls/5/results/
-    url(r'^(?P<poll_id>\d+)/results/$', views.results, name='results'),
-    # ex: /polls/5/vote/
-    url(r'^(?P<poll_id>\d+)/votehax/$', views.vote, name='votex'),
+   
                        
 )

@@ -143,8 +143,8 @@ def indexx (request):
     if request.method == 'POST':
         u = User(name=request.POST.get('user'))
         u.save()
-        m = Message(content=request.POST.get('text'),user = u,Latitude = request.POST.get('lati', ' '),
-                    Longitude =request.POST.get('longi', ' '), Accuracy =request.POST.get('accu', ' '))
+        m = Message(content=request.POST.get('text'),user = u,latitude = request.POST.get('lati', ' '),
+                    longitude =request.POST.get('longi', ' '), accuracy =request.POST.get('accu', ' '))
         m.save()
        
         #m = Message(content=request.POST.get('text', ' '), user = u)
@@ -169,8 +169,8 @@ def kenn(request):
 ##########################################################################
 from django.shortcuts import render_to_response
 
-def home( request ):
-   return render_to_response('polls/home.html')
+def home1( request ):
+   return render_to_response('polls/home1.html')
 ##########################################################################
 def error( request ):
    return render_to_response('polls/error.html')
@@ -209,4 +209,59 @@ def error( request ):
 ##    return render_to_response('polls/indexx.html', {'x':User(), 'y':Message()}, RequestContext(request))
 ##########################################################################
 ##########################################################################
+from django.shortcuts import render
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from django.core import serializers
+
+from polls.models import ApartmentsNY
+
+def home(request):
+	return render(request, 'polls/home.html')
+
+def info(request):
+	return render(request, 'polls/info.html')
+
+@api_view(['GET'])
+def get_apartments(request):
+	result = ApartmentsNY.objects.all()
+	data = serializers.serialize('json', result)
+	return Response(data, status=status.HTTP_200_OK, content_type='application/json')
+
+@api_view(['GET'])
+def apartments_filter(request):
+	request_data = request.QUERY_PARAMS
+	filtered_fields = request_data['fields']
+
+	kwargs = {}
+
+	if "city" in filtered_fields:
+		kwargs['city'] = request_data['city']
+	if "price" in filtered_fields:
+		price = request_data['price'] # e.g (150, 400) 
+		price_values = price[1:][:-1].split(',')
+		min_price = price_values[0]
+		max_price = price_values[1]
+		kwargs['price__range'] =  (min_price, max_price)
+		print kwargs['price__range']
+	if "wifi" in filtered_fields:
+		kwargs['wifi'] = request_data['wifi']
+	if "breakfast" in filtered_fields:
+		kwargs['breakfast'] = request_data['breakfast']
+
+	try:
+		result = ApartmentsNY.objects.filter(**kwargs)
+		data = serializers.serialize('json', result)
+		return Response(data, status=status.HTTP_200_OK, content_type='application/json')
+		
+	except:
+		return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
 ##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+

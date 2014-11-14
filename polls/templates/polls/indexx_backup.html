@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+
+</head>
+
+<body onload="getLocation()">
+
+ <a href="http://maliyetu.herokuapp.com/polls/">Home</a>
+ 
+
+<form action="{% url 'indexx' %}" method = "post">
+    {% csrf_token %}
+	 <br>
+	<br>
+  <b>Enter User Name</b> <input type="text" name="user" id="user" maxlength="20" placeholder = "Username" value = "menet">
+    <br>
+	<br>
+	<br>
+  
+  <b>Record Message    </b>  <textarea rows="4" cols="35" id="text" name="text"  maxlength="140" placeholder = "Message goes here"></textarea><br>
+	
+<!--Longitude: --> <input    type="hidden"  type="text" id="demo9" name="longi"  /><br>
+<!--Latitude :-->  <input   type="hidden"   type="text" id="demo5" name="lati" /><br>
+<!--Accuracy :-->  <input   type="hidden"   type="text" id="demo6" name="accu" />
+    <input type="submit" value="Submit">
+</form>
+
+
+
+
+<script>
+var zd=document.getElementById("demo9");
+var zb=document.getElementById("demo5");
+var zc=document.getElementById("demo6");
+
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+
+zd.setAttribute("value", position.coords.longitude);
+zb.value= position.coords.latitude;	
+zc.value= position.coords.accuracy;
+
+ }
+</script>
+
+
+</body>
+</html>
