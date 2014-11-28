@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.gis',
     'chartit',
     'equality',
-    'easy_thumbnails',
+    #'easy_thumbnails',
     'rest_framework',
     'south',
     'leaflet',
@@ -63,7 +63,21 @@ MIDDLEWARE_CLASSES = (
     #'mobi.middleware.MobileDetectionMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+)
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+   #'django.contrib.staticfiles.storage.StaticFilesStorage',
+)
 
 ROOT_URLCONF = 'hellodjango.urls'
 
@@ -73,36 +87,47 @@ WSGI_APPLICATION = 'hellodjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-####DATABASES = {
-####    'default': {
-####
-####        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-######        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-####        'NAME': 'postgis',                      # Or path to database file if using sqlite3.
-####        'USER': 'postgres',                      # Not used with sqlite3.
-####        'PASSWORD': 'ibanana',                  # Not used with sqlite3.
-####        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-####        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-####    }
-####}
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'd2kq5ve30vlmm8',
-    'HOST': 'ec2-54-197-241-79.compute-1.amazonaws.com',
-    'PORT': 5432,
-    'USER': 'mscxygirncclpr',
-    'PASSWORD': 'qrYgG0PRpRDKDMoZ5tnCqOOrMZ',
-  }
+    'default': {
+
+        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+##        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'postgis',                      # Or path to database file if using sqlite3.
+        'USER': 'postgres',                      # Not used with sqlite3.
+        'PASSWORD': 'ibanana',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
 }
+
+##DATABASES = {
+##  'default': {
+##    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+##    'NAME': 'd2kq5ve30vlmm8',
+##    'HOST': 'ec2-54-197-241-79.compute-1.amazonaws.com',
+##    'PORT': 5432,
+##    'USER': 'mscxygirncclpr',
+##    'PASSWORD': 'qrYgG0PRpRDKDMoZ5tnCqOOrMZ',
+##  }
+##}
+
+
+##DATABASES = {
+##  'default': {
+##    'ENGINE': 'django.contrib.gis.db.backends.postgis',
+##    'NAME': 'postgres',
+##    'HOST': '64.90.186.101',
+##    'PORT': '5432',
+##    'USER': 'maliyetu',
+##    'PASSWORD': 'ibanana12',
+##  }
+##}
 
 try:
     GEOS_LIBRARY_PATH = os.path.join(os.environ['GEOS_LIBRARY_PATH'], 'libgeos_c.so')
     GDAL_LIBRARY_PATH = os.path.join(os.environ['GDAL_LIBRARY_PATH'], 'libgdal.so')
 except:
     pass
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -124,9 +149,9 @@ STATIC_URL = '/static/'
 
 
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
-
-DATABASES['default'] =  dj_database_url.config(default ='postgres://mscxygirncclpr:qrYgG0PRpRDKDMoZ5tnCqOOrMZ@ec2-54-197-241-79.compute-1.amazonaws.com:5432/d2kq5ve30vlmm8')
+##import dj_database_url
+##
+##DATABASES['default'] =  dj_database_url.config(default ='postgres://mscxygirncclpr:qrYgG0PRpRDKDMoZ5tnCqOOrMZ@ec2-54-197-241-79.compute-1.amazonaws.com:5432/d2kq5ve30vlmm8')
 
 #------
 ##import dj_database_url
@@ -143,37 +168,30 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
-
-# Static asset configuration
-##import os
-##BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-##STATIC_ROOT = 'staticfiles'
-##STATIC_URL = '/static/'
-##
-##STATICFILES_DIRS = (
-##    os.path.join(BASE_DIR, 'static'),
-##)
-
-
+###########################################################################
+###########################################################################
+###########################################################################
+#Static asset configuration
 import os
-PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_PATH, 'static'),
+    os.path.join(BASE_DIR, 'static'),
+    #'C:/hellodjango/venv/static',
 )
-
 
 TEMPLATE_DIRS = (
    os.path.join(BASE_DIR, 'templates'),
 )
 
+#STATICFILES_STORAGE = 'myproject.storage.S3Storage'
+
+###########################################################
 
 
-
-
-
+###########################################################
 
 
 

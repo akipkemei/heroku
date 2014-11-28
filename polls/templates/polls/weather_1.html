@@ -1,18 +1,16 @@
 <head>
 	
-	<!-- <script type="text/javascript" src="/static/js/jquery-1.11.0.js"></script>  -->
-    <!-- <script type="text/javascript" src="/static/js/highcharts.js"></script> -->
-	
-	<script type="text/javascript" src="https://maliyetu.s3.amazonaws.com/static/equality/js/jquery-1.11.0.js"></script>
-    <script type="text/javascript" src="https://maliyetu.s3.amazonaws.com/static/equality/js/highcharts.js"></script>
-	
+	<script type="text/javascript" src="/static/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/static/js/highcharts.js"></script>
     <!-- the charts need to be rendered to                             --> 	
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	
+
+
+
 	
 	</head>
 <body>
-    <a href="http://maliyetu.herokuapp.com/polls/">Home</a>
+   
 
 {% load chartit %}
 {{ rainpivchart|load_charts:"cht,cht1,vcht,pcht,mcht,ycht"}}
@@ -34,7 +32,6 @@ Content goes here</div>
 
 <div id="ycht" style=";height:300px;width:900px;float:left;">
 Content goes here</div>
-
 
 	
 </body>

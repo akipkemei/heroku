@@ -7,6 +7,8 @@ from django.template import RequestContext, loader
 from equality.models import MonthlyWeatherByCity
 from equality.models import DailyWeather
 
+
+
 #from django.template import Context, loader
 from django.db.models import Avg
 
@@ -265,4 +267,5 @@ def rainfall_pivot_chart_view(request):
     return render_to_response('equality/weather.html', rainpivchart)
 ######################################################################
 ###################################
+
 

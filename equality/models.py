@@ -5,8 +5,8 @@ class MonthlyWeatherByCity(models.Model):
     boston_temp = models.DecimalField(max_digits=5, decimal_places=2)
     houston_temp = models.DecimalField(max_digits=5, decimal_places=2)
 
-##    def __unicode__(self):
-##        return unicode(self.month)
+    def __unicode__(self):
+        return '%s %s %s' %(self.month,self.boston_temp, self.houston_temp)
 
 
 class DailyWeather(models.Model):
@@ -20,7 +20,7 @@ class DailyWeather(models.Model):
     
 
     def __unicode__(self):
-        return '%s **||** %s' %(self.city, self.state)
+        return '%s **||** %s' %(self.month, self.state)
 
 ##    def __unicode__(self):
 ##        return unicode(self.state)
